@@ -1,4 +1,4 @@
 # Languages
 
-* [English](en/English.md)
-* [French](fr/French.md)
+* [English](en/)
+* [French](fr/)
