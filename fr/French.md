@@ -1,4 +1,4 @@
-# DZConseil Tech challenges
+# DZConseil défis Tech
 
 Choisissez le défi le plus approprié pour vous (un seul suffit):
 
