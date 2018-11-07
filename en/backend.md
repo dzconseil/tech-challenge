@@ -21,8 +21,8 @@ list/show/create **threads**.
 - Your repo should be easy to setup with clear instruction.
 - (Optional) Deploy as a public api to your own host.
 
-## Expection
-- This challange should take around 4 hours to complete.
+## Expectations
+- This challenge should take around 4 hours to complete.
 - Your code should be modular, each module should focus on doing one thing and do it well.
 - Avoid over-engineering.
 - Use of popular third-party packages is strongly recommended.
@@ -32,8 +32,8 @@ list/show/create **threads**.
 1. Must be a **RESTful** HTTP API
 2. The API must implement 4 endpoints with path, method, request and response body as specified
     - One endpoint to create a new thread [see sample](#create-a-new-thread)
-        - To create a thread , the API client must provide a subject and a recipent 
-        - The API responds an object for the newly created thread the thread UUID 
+        - To create a thread , the API client must provide a subject and a recipient 
+        - The API responds with an object for the newly created thread
     - One endpoint to show a thread [see sample](#show-thread)
     - One endpoint to list all threads [see sample](#list-threads)
     - One endpoint to create a new message [see sample](#create-a-new-message)
