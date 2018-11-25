@@ -2,8 +2,7 @@
 
 ## Introduction
 
-As a software engineer in **dzconseil** team, you have to provide a reliable **backend** system to clients. Your task here is to implement few endpoints to 
-list/show/create **threads**. 
+As a software engineer in **dzconseil** team, you have to provide a reliable **backend** system to clients. Your task here is to implement few endpoints to `list/show/create` **threads**.
 
 ## Requirement
 
@@ -13,15 +12,17 @@ list/show/create **threads**.
 4. The solution must be production ready.
 
 ## Notes
-- Source code must be stored in a git repository (you can send us a link to a github.com or bitbucket.com or gitlab.com repo)
+
+- Source code must be stored in a git repository ( you can send us a link to a [Github](https://github.com/), [Bitbucket](https://bitbucket.com/) or [Gitlab](https://gitlab.com/) repo )
   - For public repos:
-	  - Repository must avoid containing words like `dzconseil` and `challenge`.
-	  - Do not copy-paste any part of this file. (task, API documentation, etc.)
-	  - This is needed to prevent other candidates from finding your solution.
+    - Repository must avoid containing words like `dzconseil` and `challenge`.
+    - Do not copy-paste any part of this file. (task, API documentation, etc.)
+    - This is needed to prevent other candidates from finding your solution.
 - Your repo should be easy to setup with clear instruction.
 - (Optional) Deploy as a public api to your own host.
 
 ## Expectations
+
 - This challenge should take around 4 hours to complete.
 - Your code should be modular, each module should focus on doing one thing and do it well.
 - Avoid over-engineering.
@@ -32,7 +33,7 @@ list/show/create **threads**.
 1. Must be a **RESTful** HTTP API
 2. The API must implement 4 endpoints with path, method, request and response body as specified
     - One endpoint to create a new thread [see sample](#create-a-new-thread)
-        - To create a thread , the API client must provide a subject and a recipient 
+        - To create a thread , the API client must provide a subject and a recipient.
         - The API responds with an object for the newly created thread
     - One endpoint to show a thread [see sample](#show-thread)
     - One endpoint to list all threads [see sample](#list-threads)
@@ -43,167 +44,204 @@ list/show/create **threads**.
 3. A Database must be used ( at **dzconseil** we use mostly **MySQL**).
 4. All responses should be in json format no matter in success or failure situations.
 
-
 ## Api interface example
 
-#### Create a new Thread
+### Create a new Thread
 
-  - Method: `POST`
-  - URL path: `/api/v1/threads`
-  - Request body:
+- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/post_threads)**
+- Method: `POST`
+- URL path: `/api/v1/threads`
+- Request body:
 
-    ```json
-    {
-      "subject": "THREAD_SUBJECT",
-      "recipient": "RECIPIENT_EMAIL",
-      "message": "THREAD_MESSAGE"
-    }
-    ```
+  ```json
+  {
+    "subject": "Team Metting!",
+    "recipient": "example@dzconseil.com",
+    "message": "hello, there is a meeting tommorw"
+  }
+  ```
 
-  - Response:
+- Response:
 
-    Header: `HTTP 200`
-    Body:
-    ```json
-    {
-      "data": {
-        "type": "threads",
-        "id": <thread_id>,
-        "attributes": {
-          "subject": <thread_subject>,
-          "creator": <thread_creator>,
-          "time": <created_at>,
-          "read" : <true|false>,
-          "deleted": <true|false>
-        }
-      }
-    }
-    ```
-    or
+  Header: `HTTP 200`
+  Body:
 
-    Header: `HTTP 422`
-    Body:
-    ```json
-    {
-      "message": "The given data was invalid.",
-      "errors": [
-          ...
-      ]
-    }
-    ```
-
-  - Tips:
-
-    **ID** field in reponse should be a **UUID** you can use a this library to handle generating **UUID's** [link to github!](https://github.com/ramsey/uuid).
-
-    if you find this **json** format strange to you, read about json api specs 
-    [link to jsonapi.org!](https://jsonapi.org).
-
-**[⬆ back to top](#problem-statement)**
-
-#### Show Thread
-
-  - Method: `GET`
-  - URL path: `/api/v1/threads/:uuid`
-
-  - Response:
-
-    Header: `HTTP 200`
-    Body:
-    ```json
-    {
-      "data": {
-        "type": "thread",
-        "id": <thread_id>,
-        "attributes": {
-          "subject": <thread_subject>,
-          "creator": <thread_creator>,
-          "time": <created_at>,
-          "read" : <true|false>,
-          "deleted": <true|false>,
-          "messages": [
-            {
-              "id":<message_id>,
-              "body": <message_body>,
-              "time": <created_at>,
-              "creator": <message_creator>
-            }
-            ...
-          ]
-        }
-      }
-    }
-    ```
-**[⬆ back to top](#problem-statement)**
-
-#### List Threads
-
-  - Method: `GET`
-  - URL path: `/api/v1/threads`
-
-  - Response:
-
-    Header: `HTTP 200`
-    Body:
-    ```json
-    {
-      "data": [ 
-        {
-          "type": "threads",
-          "id": <thread_id>,
-          "attributes": {
-            "subject": <thread_subject>,
-            "creator": <thread_creator>,
-            "time": <created_at>,
-            "read" : <true|false>,
-            "deleted": <true|false>
-          }
-        }
-        ...
-      ]
-    }
-    ```
-**[⬆ back to top](#problem-statement)**
-#### Create a new Message
-
-  - Method: `PUT`
-  - URL path: `/api/v1/threads/:uuid`
-  - Request body:
-    ```json
-    {
-      "thread_id": "THREAD_ID",
-      "message": "THREAD_MESSAGE"
-    }
-    ```
-  - Response:
-    Header: `HTTP 200`
-    Body:
-      ```json
+  ```json
+  {
+    "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+    "subject": "Team meeting!",
+    "time": "2016-08-29T09:12:33.001Z",
+    "read": true,
+    "deleted": true,
+    "creator": {
+      "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+      "email": "admin@dzconseil.com",
+      "username": "administrator"
+    },
+    "messages": [
       {
-        "data": {
-          "type": "messages",
-          "id": <message_id>,
-          "attributes": {
-              "body": <message_body>,
-              "time": <created_at>,
-              "creator": <message_creator>
-          }
+        "id": "d290f1ee-6c52-4b02-90e6-d701748f9854",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing.",
+        "time": "2016-08-29T09:12:33.001Z",
+        "creator": {
+          "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+          "email": "admin@dzconseil.com",
+          "username": "administrator"
         }
       }
-      ```
-    or
+    ]
+  }
+  ```
 
-    Header: `HTTP 422`
-    Body:
+  or
 
-    ```json
+  Header: `HTTP 422`
+  Body:
+
+  ```json
+  {
+    "message": "The given data was invalid!",
+    "errors": [
+      ...
+    ]
+  }
+  ```
+
+- Tips:
+
+  **ID** field in reponse should be a **UUID** you can use a this library to handle generating **UUID's** [link to github!](https://github.com/ramsey/uuid).
+
+  if you find this **json** format strange to you, read about json api specs 
+  [link to jsonapi.org!](https://jsonapi.org).
+
+**[⬆ back to top](#problem-statement)**
+
+### Show Thread
+
+- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/get_threads__threadID_)**
+- Method: `GET`
+- URL path: `/api/v1/threads/:uuid`
+
+- Response:
+
+  Header: `HTTP 200`
+  Body:
+
+  ```json  
+  {
+    "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+    "subject": "meeting!",
+    "time": "2016-08-29T09:12:33.001Z",
+    "read": true,
+    "deleted": true,
+    "creator": {
+      "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+      "email": "example@dzconseil.com",
+      "username": "administrator"
+    },
+    "messages": [
+      {
+        "id": "d290f1ee-6c52-4b02-90e6-d701748f9854",
+        "body": "Lorem ipsum dolor sit amet, consectetur.",
+        "time": "2016-08-29T09:12:33.001Z",
+        "creator": {
+          "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+          "email": "example@dzconseil.com",
+          "username": "administrator"
+        }
+      }
+    ]
+  }
+  ```
+
+**[⬆ back to top](#problem-statement)**
+
+### List Threads
+
+- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/get_threads)**
+- Method: `GET`
+- URL path: `/api/v1/threads`
+
+- Response:
+
+  Header: `HTTP 200`
+  Body:
+
+  ```json
+  [
     {
-      "message": "The given data was invalid.",
-      "errors": [
-          ...
-      ]
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+      "subject": "meeting!",
+      "time": "2016-08-29T09:12:33.001Z",
+      "read": true,
+      "deleted": true,
+      "creator": {
+        "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+        "email": "example@dzconseil.com",
+        "username": "administrator"
+      }
+    },
+    {
+      "id": "d290f1ee-6c54-4251-1111-d701748f0164",
+      "subject": "Second meeting!",
+      "time": "2016-08-29T09:12:33.001Z",
+      "read": false,
+      "deleted": false,
+      "creator": {
+        "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+        "email": "example@dzconseil.com",
+        "username": "administrator"
+      }
     }
-    ```
+  ]
+  ```
+
+**[⬆ back to top](#problem-statement)**
+
+### Create a new Message
+
+- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/post_threads__threadID_)**
+- Method: `POST`
+- URL path: `/api/v1/threads/:uuid`
+- Request body:
+
+  ```json
+  {
+    "message": "hello, there is a meeting tommorw",
+    "creator": "admin@dzconseil.com"
+  }
+  ```
+
+- Response:
+  Header: `HTTP 200`
+  Body:
+
+  ```json
+  {
+    "id": "d290f1ee-6c52-4b02-90e6-d701748f9854",
+    "body": "hello, there is a meeting tommrow",
+    "time": "2016-08-29T09:12:33.001Z",
+    "creator": {
+      "id": "d290f1ee-6c54-4b01-90b6-d701748f0851",
+      "email": "example@dzconseil.com",
+      "username": "administrator"
+    }
+  }
+  ```
+
+  or
+
+  Header: `HTTP 422`
+  Body:
+
+  ```json
+  {
+    "message": "The given data was invalid.",
+    "errors": [
+        ...
+    ]
+  }
+  ```
 
 **[⬆ back to top](#problem-statement)**
 
