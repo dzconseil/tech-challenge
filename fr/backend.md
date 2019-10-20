@@ -18,7 +18,7 @@
 
 ## Introduction
 
-En tant qu’ingénieur logiciel en **dzconseil** équipe, vous devez fournir une solution **backend** fiable aux nos clients.
+En tant qu’ingénieur logiciel dans l'équipe **dzconseil**, vous devez fournir une solution **backend** fiable aux nos clients.
 Votre tâche ici est d'implémenter quelques endpoints `list/show/create` pour un petit rest api comme **Airbnb**.
 
 ## Exigence
@@ -32,7 +32,7 @@ Votre tâche ici est d'implémenter quelques endpoints `list/show/create` pour u
 
 ## Remarques
 
-- Le code source doit être pushe en tant qu'une branche git dans le repo de projet fourni. ( pour ce défi nous avons utilisé une [Gitlab](https://gitlab.com/dzconseil/backend-challenge) repository )
+- Le code source doit être poussé en tant qu'une branche git dans le repo de projet fourni. ( pour ce défi nous avons utilisé une [Gitlab](https://gitlab.com/dzconseil/backend-challenge) repository )
 - Votre nom de branche devrait suivre ce schéma `challenge/lastname-firstname`.
 - (Facultatif) Déployez en tant qu'API publique sur votre propre hôte..
 
@@ -51,15 +51,15 @@ _Pour référence seulement._
 
 En suivant ce diagramme, nous souhaitons mettre en place un petit service api que nos utilisateurs peuvent utiliser.
 Cette api restfull devrait nous permettre de créer des nouvelles maisons et de leur attribuer des prix spéciaux.
-week-ends et vacances. il doit aussi permettre à nos clients de calculer un coût de booking pour toute maison.
+week-ends et vacances. il doit aussi permettre à nos clients de calculer un coût de réservation pour une maison.
 
 1. Doit être une API HTTP **RESTful**
 2. Doit implémenter 4 endpoints avec chemin, méthode, requette et corps de réponse comme spécifié
 
-   - Un **CRUD** endpoint to `list/show/create/delete` a listing [see sample](#create-a-new-listing)
-   - Un endpoint pour `ajouter` un prix spécial à une maison [see sample](#add-special-price-to-listing)
-   - Un endpoint pour `supprimer` un prix spécial [see sample](#create-a-new-listing)
-   - Un endpoint pour `calculer` le coût de checkout pour une maison donnée [see sample](#calculate-checkout-cost)
+   - Une endpoint **CRUD** pour `lister/afficher/ajouter/supprimer` une maison [see sample](#create-a-new-listing)
+   - Une endpoint pour `ajouter` un prix spécial à une maison [see sample](#add-special-price-to-listing)
+   - Une endpoint pour `supprimer` un prix spécial [see sample](#create-a-new-listing)
+   - Une endpoint pour `calculer` le coût de checkout pour une maison donnée [see sample](#calculate-checkout-cost)
      - Le coût de checkout peut être calculé sur une maison donnée.
      - Une erreur de réponse doit être envoyée si un utilisateur essaie de sélectionner une date passée comme checkin ou checkout.
      - La date de `checkin` doit être toujours avant la date de `checkout`.
