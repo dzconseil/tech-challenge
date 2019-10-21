@@ -1,106 +1,178 @@
-# Dzconseil Software Engineer Challenge - Frontend
+# dzconseil Software Engineer Challenge - Frontend <!-- omit in toc -->
+
+- [Introduction](#introduction)
+- [Requirement](#requirement)
+- [Notes](#notes)
+- [Expectations](#expectations)
+- [Problem Statement](#problem-statement)
+  - [Interface](#interface)
+- [API interface](#api-interface)
+  - [Get Listing information](#get-listing-information)
+  - [Calculate Reservation Cost](#calculate-reservation-cost)
+  - [Confirm Reservation](#confirm-reservation)
 
 ## Introduction
 
-As a software engineer in **dzconseil** team, you have to provide a reliable **frontend** application to clients. Your task here is to develop an inbox to `list/show/create` **threads**.
+As a software engineer in **dzconseil** team, you have to provide a reliable **frontend** application to clients.
+Your task here is to implement a checkout page for a small **Airbnb** like rest api.
 
 ## Requirement
 
 1. We value a **clean**, **simple** working solution.
 2. Solution must work on all modern browsers (IE excluded).
-3. We prefer [React](https://reactjs.org/), but the solution can also be written in pure javascript or one of the following libraries: [vuejs](https://vuejs.org/) or [preactjs](https://preactjs.com/) but feel free to use other tech if you prefer.
+3. The solution must be written in [React](https://reactjs.org/).
 4. The solution must be production ready.
+5. Good understanding for how git works.
+6. Good understanding of **REST API's** and **Http Clients**.
 
 ## Notes
 
-- Source code must be stored in a git repository ( you can send us a link to a [Github](https://github.com/), [Bitbucket](https://bitbucket.com/) or [Gitlab](https://gitlab.com/) repo )
-
-- For public repos:
-  - Repository must avoid containing words like `dzconseil` and `challenge`.
-  - Do not copy-paste any part of this file. (task, API documentation, etc.)
-  - This is needed to prevent other candidates from finding your solution.
-- Your repo should be easy to setup with clear instruction.
-- (Optional) Deploy as a public site to your own host.
+- Source code must be pushed as git branch in the provided project repository. ( for this challenge we used a [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) repo ) and [Create React App Starter](https://github.com/facebook/create-react-app)
+- Your branch name should follow this scheme `challenge/lastname-firstname`.
+- (Optional) Deploy as a public api to your own host.
 
 ## Expectations
 
-- This challenge should take around 4 hours to complete.
+- This challenge should take around **4** to **6** hours to complete.
 - Your code should be modular, each module should focus on doing one thing and do it well.
 - Avoid over-engineering.
-- Be cautious of third-party library usage. (Don't include a 300KB library only for 1 helper function)
+- Be cautious of **third-party** library usage. (Don't include a 300KB library only for 1 helper function)
 
 ## Problem Statement
 
-We are switching most of our projects from jQuery to React. We aim for reusable components and maintainable codebase when expansion, your task today as a frontend engineer is to build a single page inbox.
+The web is quickly evolving and most of companies are switching their projects from jQuery-ish apps to single page **React** apps.
+at **dzconseil** we work a lot with this type of **Want to migrate** clients.
 
-1. Must be a single page app (SPA) [See example](#interface)
-2. Must implement 4 components as specified in the wireframe.
+As a frontend engineer **Your Mission, Should You Choose To Accept It** 💻 is to build a checkout page,
+with at most 4 components for an **Airbnb** like website, where hosts can list their homes for rent.
+and guests later can visit our website and book this homes for a specific duration called **Trip Duration**. [See Wireframe](#interface)
 
-    - One Component to create a new thread
-        - To create a thread, the interface must provide a subject and a recipient inputs.
-          as well as a thread message textarea.
-    - One Component to show a thread.
-    - One Component to list all threads.
-    - One Component to create a new message.
-        - A message should always belong to a thread.
+### Interface
 
-## Interface
+_For reference only, you can be creative with design and UI/UX features._
 
-*For reference only, you can be creative with design and UI/UX features.*
+![Interface Review](../assets/review_tab.png)
+![Interface Confirmation](../assets/confirmation_tab.png)
 
-![Interface](../assets/inbox.jpg)
+Following this low fidelity wireframe we want to implement this checkout page as follows:
 
-**[⬆ back to top](#problem-statement)**
+1. **Must** be a single page app (SPA).
+2. **Must** implement 3 components as specified in the wireframe.
 
-## Mock Api interface
+   - One Component for the navbar.
+     - This Component **must** provide a tab menu item to switch between review and confirmation tabs.
+   - One Component to show the listing info and reservation info.
+     - This Component **must** provide a div to show all reservation related info "duration,guests".
+     - This Component **must** provide a textarea element for the user to enter a hello message for the host.
+     - This Component **must** provide a **Continue** button when clicked, it should go to the next tab "confirmation".
+     - This Component **must** provide a **Confirm** button when clicked, it should send the payload to backend.
+   - One Component to calculate reservation cost.
+     - This Component **must** provide a date picker to select checkin and checkout dates with range.
+     - This Component **must** provide a simple counter element to increment or decrement guests count.
+     - This Component **must** provide a simple counter element to increment or decrement children's count.
+     - This Component **must** provide a toggle switch to let users decide if they include pet's or not.
+     - This Component **must** provide a div to show the reservation cost when the user changes any of the inputs above.
 
-### Create a new Thread
+**[⬆ back to top](#introduction)**
 
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/post_threads)**
+## API interface
+
+### Get Listing information
+
+- Method: `GET`
+- URL path: `/api/listings/:uuid`
+- Header: `HTTP 200`
+- Body:
+
+  ```json
+  {
+    "id": "28eed9aa-c27d-4217-ab21-ad65ead3a2aa",
+    "owner_id": "59f6d752-97cf-414e-a794-42794ac7511a",
+    "name": "Warner",
+    "slug": "revolutionize-warner",
+    "description": "Maecenas ut massa quis augue luctus tincidunt.",
+    "adults": 10,
+    "children": 2,
+    "is_pets_allowed": true,
+    "base_price": 95.38,
+    "cleaning_fee": 4.33,
+    "image_url": "http://dummyimage.com/241x240.jpg/ff4444/ffffff",
+    "weekly_discount": 0.13,
+    "monthly_discount": 0.23,
+    "special_prices": [
+      {
+        "date": "2019-10-12",
+        "base_price": 40.51
+      },
+      {
+        "date": "2019-10-13",
+        "base_price": 80
+      }
+    ]
+  }
+  ```
+
+**[⬆ back to top](#introduction)**
+
+### Calculate Reservation Cost
+
 - Method: `POST`
-- URL path: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/`
+- URL path: `/api/listings/:uuid/reservation-cost`
+
 - Request body:
 
   ```json
   {
-    "subject": "Team Metting!",
-    "recipient": "example@dzconseil.com",
-    "message": "hello, there is a meeting tommorw"
+    "checkin": "2019-12-06",
+    "checkout": "2019-12-10",
+    "adults": 2,
+    "children": 1,
+    "pets": false
   }
   ```
 
-**[⬆ back to top](#problem-statement)**
+- Response:
+  Header: `HTTP 200`
+  Body:
 
-### Show Thread
+  ```json
+  {
+    "nights_count": 4,
+    "nights_cost": 95.82,
+    "discount": 13.82,
+    "cleaning_fee": 3.82,
+    "total": 112.95
+  }
+  ```
 
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/get_threads__threadID_)**
-- Method: `GET`
-- URL path: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/{uuid}`
+### Confirm Reservation
 
-**[⬆ back to top](#problem-statement)**
-
-### List Threads
-
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/get_threads)**
-- Method: `GET`
-- URL path: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/`
-
-**[⬆ back to top](#problem-statement)**
-
-### Create a new Message
-
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/post_threads__threadID_)**
 - Method: `POST`
-- URL path: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/{uuid}`
+- URL path: `/api/listings/:uuid/confirm-reservation`
+
 - Request body:
 
   ```json
   {
-    "message": "hello, there is a meeting tommorw",
-    "creator": "admin@dzconseil.com"
+    "checkin": "2019-12-06",
+    "checkout": "2019-12-10",
+    "adults": 2,
+    "children": 1,
+    "pets": false,
+    "message": "Hello Host!"
   }
   ```
 
-**[⬆ back to top](#problem-statement)**
+- Response:
+  Header: `HTTP 200`
+  Body:
+
+  ```json
+  {
+    "message": "success! thanks for your reservation"
+  }
+  ```
+
+**[⬆ back to top](#introduction)**
 
 **Questions? Suggestions? We love to hear from you: <techchallenge@dzconseil.com>**

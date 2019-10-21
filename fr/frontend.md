@@ -1,102 +1,179 @@
-# Dzconseil Software Engineer Challenge - Frontend
+# dzconseil Software Engineer Challenge - Frontend <!-- omit in toc -->
+
+- [Introduction](#introduction)
+- [Requirement](#requirement)
+- [Notes](#notes)
+- [Expectations](#expectations)
+- [Problem Statement](#problem-statement)
+  - [Interface](#interface)
+- [API interface](#api-interface)
+  - [Obtenir des informations sur le listing](#obtenir-des-informations-sur-le-listing)
+  - [Calculer le coût de la réservation](#calculer-le-co%c3%bbt-de-la-r%c3%a9servation)
+  - [Confirmer la réservation](#confirmer-la-r%c3%a9servation)
 
 ## Introduction
 
-En tant qu’ingénieur logiciel dans l’équipe **dzconseil**, vous devez fournir une application **frontend** fiable aux clients. Votre tâche ici est de développer une boîte de réception pour
-`lister/créer/afficher` des **courriels**.
+En tant qu’ingénieur logiciel dans l’équipe **dzconseil**, vous devez fournir une application **frontend** fiable aux clients.
+Votre tâche ici est de mettre en place une page de paiement pour une petite api rest comme **Airbnb**.
 
 ## Requirement
 
-1. Nous valorisons une solution **propre**, **simple** et **efficace**.
-2. La solution doit fonctionner sur tous les navigateurs modernes (IE exclu).
-3. Nous préférons [React](https://reactjs.org/), mais la solution peut également être écrite en javascript pur ou dans l’une des bibliothèques suivantes: [vuejs](https://vuejs.org/) ou [preactjs](https://preactjs.com/) mais n'hésitez pas à utiliser d'autres technologies si vous préférez.
+1. Nous valorisons une solution **propre**, **simple** et efficace.
+2. La solution doit fonctionner sur tous les navigateurs modernes (sauf IE).
+3. La solution doit être écrite en [React](https://reactjs.org/).
 4. La solution doit être prête pour la production.
+5. Bonne compréhension du fonctionnement de **GIT**.
+6. Bonne compréhension des **API REST** et **Clients HTTP**.
 
-## Remarques
+## Notes
 
-- Le code source doit être stocké dans un dépôt git ( vous pouvez nous envoyer un lien vers un dépôt [Github](https://github.com/), [Bitbucket](https://bitbucket.com/) ou [Gitlab](https://gitlab.com/) )
-  - Pour les dépôts publics:
-    - La repository doit éviter de contenir des mots tels que `dzconseil` ou `challenge`.
-    - Ne copiez-collez aucune partie de ce fichier. (tâche, documentation de l'API, etc.)
-    - Cela est nécessaire pour empêcher d'autres candidats de trouver votre solution.
-- Votre repo devrait être facile à installer avec des instructions claires.
-- (Facultatif) Déployez en tant que site public sur votre propre hôte.
-  
-## Expections
+- Le code source doit être inséré en tant que branche git dans le repository de projet fourni. ( pour ce défi nous avons utilisé une repository [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) ) et [Create React App Starter](https://github.com/facebook/create-react-app)
+- Votre nom de branche devrait suivre ce schéma `challenge/lastname-firstname`.
+- (Facultatif) Déployez en tant qu'API publique sur votre propre hôte..
 
-- Ce défi devrait durer environ 4 heures.
+## Expectations
+
+- Ce défi devrait durer environ **4** à **6** heures.
 - Votre code doit être modulaire, chaque module doit se concentrer sur une chose à faire et bien le faire.
-- Évitez le `over-engineering`.
-- Méfiez-vous de l'utilisation des bibliothèques third-party. (N'incluez pas une bibliothèque de 300 Ko seulement pour une fonction d'assistance)
+- Évitez l'ingénierie excessive.
+- Méfiez-vous des bibliothèques **Third-party**. (N'incluez pas une bibliothèque de 300 Ko pour une seul fonction)
 
-## Déclaration du problème
+## Problem Statement
 
-Nous basculons la plupart de nos projets de jQuery à React. Nous visons des composants réutilisables et une base de code maintenable lors de l'expansion, votre tâche aujourd'hui en tant qu'ingénieur **front-end** consiste à créer une boîte de réception d'une seule page `SPA`.
+Le Web évolue rapidement et la plupart des entreprises transfèrent leurs projets d'applications **jQuery** à des applications SPA **React**.
+chez **dzconseil**, nous travaillons beaucoup avec des clients de type **nous voulons migrer**.
 
-1. Doit être une application à page unique (SPA) [voir exemple](#interface)
-2. Doit implémenter 4 composants comme spécifié dans la structure wireframe.
-    - Un composant pour créer un nouveau courriel
-        - Pour créer un courriel, l'interface doit fournir les entrées sujet et destinataire. ainsi qu'une zone de texte de message de courriel.
-    - Un composant pour montrer un courriel.
-    - Un composant pour lister tous les threads.
-    - Un composant pour créer un nouveau message.
-        - Un message doit toujours appartenir à un courriel.
+En tant qu’ingénieur frontend **Votre mission, si vous choisissez de l’accepter** 💻 consiste à créer une page de paiement,
+avec au plus 4 composants pour un site **comme Airbnb**, où les hôtes peuvent lister leurs maisons à louer.
+et les clients plus tard peuvent visiter notre site Web et réserver ces maisons pour une durée spécifique appelée **Durée du voyage**. [Voir wireframe](#interface)
 
-## Interface
+### Interface
 
-*Pour référence uniquement, vous pouvez être créatif avec le design et les fonctionnalités UI/UX.*
+_Pour référence seulement, vous pouvez être créatif avec les fonctionnalités de design et UI / UX._
 
-![Interface](../assets/inbox.jpg)
+![Interface Review](../assets/review_tab.png)
+![Interface Confirmation](../assets/confirmation_tab.png)
 
-## Mock Api interface
+Suite à cette image wireframe, nous souhaitons implémenter cette page de paiement comme suit:
 
-### Create a new Thread
+1. **Doit** être une application à une seul page (SPA).
+2. **Doit** implémenter 3 composants comme spécifié dans la wireframe.
 
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/post_threads)**
-- Méthode: `POST`
-- le chemin URL: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/`
-- le corps de la requête:
+   - Un composant pour la barre de navigation.
+     - Ce composant **doit** fournir un élément de menu d'onglet pour basculer entre les onglets "révision" et "confirmation".
+   - Un composant pour afficher les informations de liste et les informations de réservation.
+     - Ce composant **doit** fournir un div pour afficher toutes les informations relatives à la réservation "durée, invités".
+     - Ce composant **doit** fournir un élément textarea permettant à l'utilisateur de saisir un message d'accueil pour l'hôte.
+     - Ce composant **doit** fournir un bouton **Continuer** lorsque vous cliquez dessus, vous devriez aller à l'onglet suivant "confirmation".
+     - Ce composant **doit** fournir un bouton **Confirmer** lorsque vous cliquez dessus, il devrait envoyer le payload au backend.
+   - Un composant pour calculer le coût de la réservation.
+     - Ce composant **doit** fournir un sélecteur de date pour sélectionner les dates d'arrivée et de départ avec range.
+     - Ce composant **doit** fournir un élément de compteur simple pour incrémenter ou décrémenter le nombre d'invités.
+     - Ce composant **doit** fournir un élément de compteur simple pour incrémenter ou décrémenter le nombre d'enfants.
+     - Ce composant **doit** fournir un Toggle-Switch pour laisser les utilisateurs décider s'ils incluent l'animal ou non.
+     - Ce composant **doit** fournir un div pour afficher le coût de la réservation lorsque l'utilisateur modifie l'une des entrées ci-dessus.
+
+**[⬆ retour au sommet](#introduction)**
+
+## API interface
+
+### Obtenir des informations sur le listing
+
+- Méthode: `GET`
+- Chemin de l'URL: `/api/listings/:uuid`
+- Réponse:
+  Entête: `HTTP 200`
+  Corps:
 
   ```json
   {
-    "subject": "Team Metting!",
-    "recipient": "example@dzconseil.com",
-    "message": "hello, there is a meeting tommorw"
+    "id": "28eed9aa-c27d-4217-ab21-ad65ead3a2aa",
+    "owner_id": "59f6d752-97cf-414e-a794-42794ac7511a",
+    "name": "Warner",
+    "slug": "revolutionize-warner",
+    "description": "Maecenas ut massa quis augue luctus tincidunt.",
+    "adults": 10,
+    "children": 2,
+    "is_pets_allowed": true,
+    "base_price": 95.38,
+    "cleaning_fee": 4.33,
+    "image_url": "http://dummyimage.com/241x240.jpg/ff4444/ffffff",
+    "weekly_discount": 0.13,
+    "monthly_discount": 0.23,
+    "special_prices": [
+      {
+        "date": "2019-10-12",
+        "base_price": 40.51
+      },
+      {
+        "date": "2019-10-13",
+        "base_price": 80
+      }
+    ]
   }
   ```
 
-**[⬆ back to top](#problem-statement)**
+**[⬆ retour au sommet](#introduction)**
 
-### Show Thread
+### Calculer le coût de la réservation
 
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/get_threads__threadID_)**
-- Méthode: `GET`
-- le chemin URL: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/{uuid}`
-
-**[⬆ back to top](#problem-statement)**
-
-### List Threads
-
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/get_threads)**
-- Méthode: `GET`
-- le chemin URL: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/`
-
-**[⬆ back to top](#problem-statement)**
-
-### Create a new Message
-
-- **[Check Docs](https://app.swaggerhub.com/apis-docs/dzconseil/challenge/1.0.0#/default/post_threads__threadID_)**
 - Méthode: `POST`
-- le chemin URL: `https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/{uuid}`
-- le corps de la requête:
+- Chemin de l'URL: `/api/listings/:uuid/reservation-cost`
+
+- Corps de la requette:
 
   ```json
   {
-    "message": "hello, there is a meeting tommorw",
-    "creator": "admin@dzconseil.com"
+    "checkin": "2019-12-06",
+    "checkout": "2019-12-10",
+    "adults": 2,
+    "children": 1,
+    "pets": false
   }
   ```
 
-**[⬆ back to top](#problem-statement)**
+- Réponse:
+  Entête: `HTTP 200`
+  Corps:
 
-**Questions? Suggestions? We love to hear from you: <techchallenge@dzconseil.com>**
+  ```json
+  {
+    "nights_count": 4,
+    "nights_cost": 95.82,
+    "discount": 13.82,
+    "cleaning_fee": 3.82,
+    "total": 112.95
+  }
+  ```
+
+### Confirmer la réservation
+
+- Méthode: `POST`
+- Chemin de l'URL: `/api/listings/:uuid/confirm-reservation`
+
+- Corps de la requette:
+
+  ```json
+  {
+    "checkin": "2019-12-06",
+    "checkout": "2019-12-10",
+    "adults": 2,
+    "children": 1,
+    "pets": false,
+    "message": "Hello Host!"
+  }
+  ```
+
+- Réponse:
+  Entête: `HTTP 200`
+  Corps:
+
+  ```json
+  {
+    "message": "success! thanks for your reservation"
+  }
+  ```
+
+**[⬆ retour au sommet](#introduction)**
+
+**Des questions? Suggestions? Nous aimons répondre: <techchallenge@dzconseil.com>**
