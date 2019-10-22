@@ -13,7 +13,7 @@
 
 ## Introduction
 
-As a software engineer in **dzconseil** team, you have to provide a reliable **frontend** application to clients.
+As a software engineer within **dzconseil** team, you have to provide a reliable **frontend** application to clients.
 Your task here is to implement a checkout page for a small **Airbnb** like rest api.
 
 ## Requirement
@@ -27,7 +27,7 @@ Your task here is to implement a checkout page for a small **Airbnb** like rest 
 
 ## Notes
 
-- Source code must be pushed as git branch in the provided project repository. ( for this challenge we used a [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) repo ) and [Create React App Starter](https://github.com/facebook/create-react-app)
+- Source code must be pushed as git branch in the provided project repository. For this challenge we used a [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) repo and [Create React App Starter](https://github.com/facebook/create-react-app)
 - Your branch name should follow this scheme `challenge/lastname-firstname`.
 - (Optional) Deploy as a public api to your own host.
 
@@ -36,15 +36,15 @@ Your task here is to implement a checkout page for a small **Airbnb** like rest 
 - This challenge should take around **4** to **6** hours to complete.
 - Your code should be modular, each module should focus on doing one thing and do it well.
 - Avoid over-engineering.
-- Be cautious of **third-party** library usage. (Don't include a 300KB library only for 1 helper function)
+- Be cautious of **third-party** library usage. Don't include a 300KB library only for 1 helper function.
 
 ## Problem Statement
 
 The web is quickly evolving and most of companies are switching their projects from jQuery-ish apps to single page **React** apps.
-at **dzconseil** we work a lot with this type of **Want to migrate** clients.
+At **dzconseil** we work a lot with this type of **Want to migrate** clients.
 
 As a frontend engineer **Your Mission, Should You Choose To Accept It** 💻 is to build a checkout page,
-with at most 4 components for an **Airbnb** like website, where hosts can list their homes for rent.
+with at most 4 components for an **Airbnb** like website, where hosts can list their homes for rent,
 and guests later can visit our website and book this homes for a specific duration called **Trip Duration**. [See Wireframe](#interface)
 
 ### Interface
@@ -64,8 +64,8 @@ Following this low fidelity wireframe we want to implement this checkout page as
    - One Component to show the listing info and reservation info.
      - This Component **must** provide a div to show all reservation related info "duration,guests".
      - This Component **must** provide a textarea element for the user to enter a hello message for the host.
-     - This Component **must** provide a **Continue** button when clicked, it should go to the next tab "confirmation".
-     - This Component **must** provide a **Confirm** button when clicked, it should send the payload to backend.
+     - This Component **must** provide a **Continue** button when clicked, and should lead to the next tab "confirmation".
+     - This Component **must** provide a **Confirm** button when clicked, and should send the payload to backend.
    - One Component to calculate reservation cost.
      - This Component **must** provide a date picker to select checkin and checkout dates with range.
      - This Component **must** provide a simple counter element to increment or decrement guests count.
