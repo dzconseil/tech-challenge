@@ -60,18 +60,18 @@ Following this low fidelity wireframe we want to implement this checkout page as
 2. **Must** implement 3 components as specified in the wireframe.
 
    - One Component for the navbar.
-     - This Component **must** provide a tab menu item to switch between review and confirmation tabs.
+     - This Component **Must** provide a tab menu item to switch between review and confirmation tabs.
    - One Component to show the listing info and reservation info.
-     - This Component **must** provide a div to show all reservation related info "duration,guests".
-     - This Component **must** provide a textarea element for the user to enter a hello message for the host.
-     - This Component **must** provide a **Continue** button when clicked, and should lead to the next tab "confirmation".
-     - This Component **must** provide a **Confirm** button when clicked, and should send the payload to backend.
+     - This Component **Must** provide a div to show all reservation related info "duration,guests".
+     - This Component **Must** provide a textarea element for the user to enter a hello message for the host.
+     - This Component **Must** provide a **Continue** button when clicked, and should lead to the next tab "confirmation".
+     - This Component **Must** provide a **Confirm** button when clicked, and should send the payload to backend.
    - One Component to calculate reservation cost.
-     - This Component **must** provide a date picker to select checkin and checkout dates with range.
-     - This Component **must** provide a simple counter element to increment or decrement guests count.
-     - This Component **must** provide a simple counter element to increment or decrement children's count.
-     - This Component **must** provide a toggle switch to let users decide if they include pet's or not.
-     - This Component **must** provide a div to show the reservation cost when the user changes any of the inputs above.
+     - This Component **Must** provide a date picker to select checkin and checkout dates with range.
+     - This Component **Must** provide a simple counter element to increment or decrement guests count.
+     - This Component **Must** provide a simple counter element to increment or decrement children's count.
+     - This Component **Must** provide a toggle switch to let users decide if they include pet's or not.
+     - This Component **Must** provide a div to show the reservation cost when the user changes any of the inputs above.
 
 **[⬆ back to top](#introduction)**
 

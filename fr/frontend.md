@@ -1,9 +1,9 @@
-# dzconseil Software Engineer Challenge - Frontend <!-- omit in toc -->
+# Défis Tech DZConseil- Frontend <!-- omit in toc -->
 
 - [Introduction](#introduction)
-- [Requirement](#requirement)
-- [Notes](#notes)
-- [Expectations](#expectations)
+- [Exigences](#exigences)
+- [Remarques](#remarques)
+- [Attentes](#attentes)
 - [Problem Statement](#problem-statement)
   - [Interface](#interface)
 - [API interface](#api-interface)
@@ -16,7 +16,7 @@
 En tant qu’ingénieur logiciel dans l’équipe **dzconseil**, vous devez fournir une application **frontend** fiable aux clients.
 Votre tâche ici est de mettre en place une page de paiement pour une petite api rest comme **Airbnb**.
 
-## Requirement
+## Exigences
 
 1. Nous valorisons une solution **propre**, **simple** et efficace.
 2. La solution doit fonctionner sur tous les navigateurs modernes (sauf IE).
@@ -25,17 +25,17 @@ Votre tâche ici est de mettre en place une page de paiement pour une petite api
 5. Bonne compréhension du fonctionnement de **GIT**.
 6. Bonne compréhension des **API REST** et **Clients HTTP**.
 
-## Notes
+## Remarques
 
 - Le code source doit être inséré en tant que branche git dans le repository du projet fourni. Pour ce défi, nous avons utilisons une repository [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) et [Create React App Starter](https://github.com/facebook/create-react-app)
 - Votre nom de branche devrait suivre ce schéma `challenge/lastname-firstname`.
 - (Facultatif) Déployez en tant qu'API publique sur votre propre hôte.
 
-## Expectations
+## Attentes
 
 - Ce défi devrait durer environ **4** à **6** heures.
 - Votre code doit être modulaire, chaque module doit se concentrer sur une chose à faire et bien le faire.
-- Évitez l'ingénierie excessive.
+- Éviter le over-engineering.
 - Méfiez-vous des bibliothèques **Third-party**. (N'incluez pas une bibliothèque de 300 Ko pour une seul fonction)
 
 ## Problem Statement
@@ -60,18 +60,18 @@ Suite à cette image wireframe, nous souhaitons implémenter cette page de paiem
 2. **Doit** implémenter 3 composants comme spécifié dans la wireframe.
 
    - Un composant pour la barre de navigation.
-     - Ce composant **doit** fournir un élément du menu d'onglet pour basculer entre les onglets "révision" et "confirmation".
+     - Ce composant **Doit** fournir un élément du menu d'onglet pour basculer entre les onglets "révision" et "confirmation".
    - Un composant pour afficher les informations d'une maison et les informations de réservation.
-     - Ce composant **doit** fournir un div pour afficher toutes les informations relatives à la réservation "durée, invités".
-     - Ce composant **doit** fournir un élément textarea permettant à l'utilisateur de saisir un message d'accueil pour l'hôte.
-     - Ce composant **doit** fournir un bouton **Continuer** lorsque vous cliquez dessus, vous devriez aller à l'onglet suivant "confirmation".
-     - Ce composant **doit** fournir un bouton **Confirmer** lorsque vous cliquez dessus, il devrait envoyer le payload au backend.
+     - Ce composant **Doit** fournir un div pour afficher toutes les informations relatives à la réservation "durée, invités".
+     - Ce composant **Doit** fournir un élément textarea permettant à l'utilisateur de saisir un message d'accueil pour l'hôte.
+     - Ce composant **Doit** fournir un bouton **Continuer** lorsque vous cliquez dessus, vous devriez aller à l'onglet suivant "confirmation".
+     - Ce composant **Doit** fournir un bouton **Confirmer** lorsque vous cliquez dessus, il devrait envoyer le payload au backend.
    - Un composant pour calculer le coût de la réservation.
-     - Ce composant **doit** fournir un sélecteur de date pour sélectionner les dates d'arrivée et de départ avec range.
-     - Ce composant **doit** fournir un élément de compteur simple pour incrémenter ou décrémenter le nombre d'invités.
-     - Ce composant **doit** fournir un élément de compteur simple pour incrémenter ou décrémenter le nombre d'enfants.
-     - Ce composant **doit** fournir un Toggle-Switch pour laisser les utilisateurs décider s'ils incluent l'animal ou non.
-     - Ce composant **doit** fournir un div pour afficher le coût de la réservation lorsque l'utilisateur modifie l'une des entrées ci-dessus.
+     - Ce composant **Doit** fournir un sélecteur de date pour sélectionner les dates d'arrivée et de départ avec range.
+     - Ce composant **Doit** fournir un élément de compteur simple pour incrémenter ou décrémenter le nombre d'invités.
+     - Ce composant **Doit** fournir un élément de compteur simple pour incrémenter ou décrémenter le nombre d'enfants.
+     - Ce composant **Doit** fournir un Toggle-Switch pour laisser les utilisateurs décider s'ils incluent l'animal ou non.
+     - Ce composant **Doit** fournir un div pour afficher le coût de la réservation lorsque l'utilisateur modifie l'une des entrées ci-dessus.
 
 **[⬆ retour au sommet](#introduction)**
 
