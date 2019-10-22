@@ -1,6 +1,6 @@
 # Défis Tech DZConseil
 
-Choisissez le défi le plus approprié pour vous (un seul suffit):
+Choisissez le défi le plus approprié pour vous:
 
 - [Backend](backend.md)
 - [Frontend](frontend.md)
