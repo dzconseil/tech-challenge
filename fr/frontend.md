@@ -27,9 +27,9 @@ Votre tâche ici est de mettre en place une page de paiement pour une petite api
 
 ## Notes
 
-- Le code source doit être inséré en tant que branche git dans le repository de projet fourni. ( pour ce défi nous avons utilisé une repository [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) ) et [Create React App Starter](https://github.com/facebook/create-react-app)
+- Le code source doit être inséré en tant que branche git dans le repository du projet fourni. Pour ce défi, nous avons utilisons une repository [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) et [Create React App Starter](https://github.com/facebook/create-react-app)
 - Votre nom de branche devrait suivre ce schéma `challenge/lastname-firstname`.
-- (Facultatif) Déployez en tant qu'API publique sur votre propre hôte..
+- (Facultatif) Déployez en tant qu'API publique sur votre propre hôte.
 
 ## Expectations
 
@@ -41,11 +41,11 @@ Votre tâche ici est de mettre en place une page de paiement pour une petite api
 ## Problem Statement
 
 Le Web évolue rapidement et la plupart des entreprises transfèrent leurs projets d'applications **jQuery** à des applications SPA **React**.
-chez **dzconseil**, nous travaillons beaucoup avec des clients de type **nous voulons migrer**.
+Chez **dzconseil**, nous travaillons beaucoup avec des clients du type **nous voulons migrer**.
 
-En tant qu’ingénieur frontend **Votre mission, si vous choisissez de l’accepter** 💻 consiste à créer une page de paiement,
-avec au plus 4 composants pour un site **comme Airbnb**, où les hôtes peuvent lister leurs maisons à louer.
-et les clients plus tard peuvent visiter notre site Web et réserver ces maisons pour une durée spécifique appelée **Durée du voyage**. [Voir wireframe](#interface)
+En tant qu’ingénieur frontend, **Votre mission, si vous choisissez de l’accepter** 💻 consiste à créer une page de paiement,
+avec au plus 4 composants pour un site **comme Airbnb**, où les hôtes peuvent lister leurs maisons à louer,
+et les clients plus tard peuvent visiter le site Web et réserver des maisons pour une durée spécifique appelée **Durée du voyage**. [Voir wireframe](#interface)
 
 ### Interface
 
@@ -60,8 +60,8 @@ Suite à cette image wireframe, nous souhaitons implémenter cette page de paiem
 2. **Doit** implémenter 3 composants comme spécifié dans la wireframe.
 
    - Un composant pour la barre de navigation.
-     - Ce composant **doit** fournir un élément de menu d'onglet pour basculer entre les onglets "révision" et "confirmation".
-   - Un composant pour afficher les informations de liste et les informations de réservation.
+     - Ce composant **doit** fournir un élément du menu d'onglet pour basculer entre les onglets "révision" et "confirmation".
+   - Un composant pour afficher les informations d'une maison et les informations de réservation.
      - Ce composant **doit** fournir un div pour afficher toutes les informations relatives à la réservation "durée, invités".
      - Ce composant **doit** fournir un élément textarea permettant à l'utilisateur de saisir un message d'accueil pour l'hôte.
      - Ce composant **doit** fournir un bouton **Continuer** lorsque vous cliquez dessus, vous devriez aller à l'onglet suivant "confirmation".
