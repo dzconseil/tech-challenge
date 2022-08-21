@@ -27,7 +27,7 @@ Votre tâche ici est de mettre en place une page de paiement pour une petite api
 
 ## Remarques
 
-- Le code source doit être inséré en tant que branche git dans le repository du projet fourni. Pour ce défi, nous avons utilisons une repository [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) et [Create React App Starter](https://github.com/facebook/create-react-app)
+- Le code source doit être inséré en tant que branche git dans le repository du projet fourni. Pour ce défi, nous avons utilisons une repository [GitHub](https://github.com/dzconseil/frontend-challenge) et [Create React App Starter](https://github.com/facebook/create-react-app)
 - Votre nom de branche devrait suivre ce schéma `challenge/lastname-firstname`.
 - (Facultatif) Déployez en tant qu'API publique sur votre propre hôte.
 
