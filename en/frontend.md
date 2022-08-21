@@ -27,7 +27,7 @@ Your task here is to implement a checkout page for a small **Airbnb** like rest 
 
 ## Notes
 
-- Source code must be pushed as git branch in the provided project repository. For this challenge we used a [Gitlab](https://gitlab.com/dzconseil/frontend-challenge) repo and [Create React App Starter](https://github.com/facebook/create-react-app)
+- Source code must be pushed as git branch in the provided project repository. For this challenge we used a [GitHub](https://github.com/dzconseil/frontend-challenge) repo and [Create React App Starter](https://github.com/facebook/create-react-app)
 - Your branch name should follow this scheme `challenge/lastname-firstname`.
 - (Optional) Deploy as a public api to your own host.
 

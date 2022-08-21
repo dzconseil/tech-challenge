@@ -32,7 +32,7 @@ Your task here is to implement few endpoints `list/show/create` for a small **Ai
 
 ## Notes
 
-- Source code must be pushed as git branch in the provided project repository. ( for this challenge we used a [Gitlab](https://gitlab.com/dzconseil/backend-challenge) repo )
+- Source code must be pushed as git branch in the provided project repository. ( for this challenge we used a [GitHub](https://github.com/dzconseil/backend-challenge) repo )
 - Your branch name should follow this scheme `challenge/lastname-firstname`.
 - (Optional) Deploy as a public api to your own host.
 
@@ -73,7 +73,7 @@ weekends and holidays. it must also allow our clients to calculate a checkout co
 Inorder to get a copy of this project on your machine you need to run the following command:
 
 ```bash
-git clone git@gitlab.com:dzconseil/backend-challenge.git dzconseil-challenge
+git clone git@github.com:dzconseil/backend-challenge.git dzconseil-challenge
 ```
 
 This will get you a copy of this project into a folder named `dzconseil-challenge`

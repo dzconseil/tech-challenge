@@ -32,7 +32,7 @@ Votre tâche ici est d'implémenter quelques endpoints `list/show/create` pour u
 
 ## Remarques
 
-- Le code source doit être poussé en tant qu'une branche git dans le repo de projet fourni. ( pour ce défi nous avons utilisé une [Gitlab](https://gitlab.com/dzconseil/backend-challenge) repository )
+- Le code source doit être poussé en tant qu'une branche git dans le repo de projet fourni. ( pour ce défi nous avons utilisé une [GitHub](https://github.com/dzconseil/backend-challenge) repository )
 - Votre nom de branche devrait suivre ce schéma `challenge/lastname-firstname`.
 - (Facultatif) Déployez en tant qu'API publique sur votre propre hôte..
 
@@ -73,7 +73,7 @@ week-ends et vacances. il doit aussi permettre à nos clients de calculer un co�
 Pour obtenir une copie de ce projet sur votre machine, vous devez exécuter la commande suivante:
 
 ```bash
-git clone git@gitlab.com:dzconseil/backend-challenge.git dzconseil-challenge
+git clone git@github.com:dzconseil/backend-challenge.git dzconseil-challenge
 ```
 
 Vous obtiendrez une copie de ce projet dans un dossier nommé `dzconseil-challenge`
