@@ -4,22 +4,19 @@
 - [Exigence](#exigence)
 - [Remarques](#remarques)
 - [Attentes](#attentes)
-- [Déclaration du problème](#d%c3%a9claration-du-probl%c3%a8me)
+- [Déclaration du problème](#dclaration-du-problme)
 - [Configuration du projet](#configuration-du-projet)
-- [Exemple d'API](#exemple-dapi)
-  - [Créer une nouvelle annonce maison](#cr%c3%a9er-une-nouvelle-annonce-maison)
+- [Endpoints](#endpoints)
   - [Afficher toutes les maisons](#afficher-toutes-les-maisons)
   - [Afficher une maison](#afficher-une-maison)
-  - [Mettre à jour les informations d'une maison](#mettre-%c3%a0-jour-les-informations-dune-maison)
+  - [Créer une nouvelle annonce maison](#crer-une-nouvelle-annonce-maison)
+  - [Mettre à jour les informations d'une maison](#mettre--jour-les-informations-dune-maison)
   - [Supprimer une maison](#supprimer-une-maison)
-  - [Ajouter un prix spécial à une maison](#ajouter-un-prix-sp%c3%a9cial-%c3%a0-une-maison)
-  - [Supprimer un prix spécial](#supprimer-un-prix-sp%c3%a9cial)
-  - [Calculer le coût de la réservation](#calculer-le-co%c3%bbt-de-la-r%c3%a9servation)
 
 ## Introduction
 
-En tant qu’ingénieur logiciel dans l'équipe **dzconseil**, vous devez fournir une solution **backend** fiable aux nos clients.
-Votre tâche ici est d'implémenter quelques endpoints `list/show/create` pour un petit rest api comme **Airbnb**.
+En tant qu’ingénieur logiciel dans l'équipe **DZConseil**, vous devez fournir une solution **backend** fiable à nos clients.
+Votre tâche ici est d'implémenter quelques fonctionnalités pour une api rest comme **Airbnb**.
 
 ## Exigence
 
@@ -91,7 +88,7 @@ tout ce que vous avez à faire est de remplir la logique manquante et d'exécute
 
 tous les tests de ce projet doivent réussir avant que vous poussiez votre code.
 
-## Exemple d'API
+## Endpoints
 
 ### Créer une nouvelle annonce maison
 
