@@ -25,6 +25,7 @@ Your task here is to implement a few features for a small **Airbnb** like rest a
   and [PHP](https://www.php.net/).
 - Good understanding for how git works.
 - Good understanding of **REST API's**.
+- No package should be added to the provided code.
 
 ## Notes
 
@@ -34,7 +35,7 @@ Your task here is to implement a few features for a small **Airbnb** like rest a
 
 ## Expectations
 
-- This challenge should take around 6 to 8 hours to complete.
+- This challenge should take around 4 to 5 hours to complete.
 - All tests within your branch must pass.
 - Avoid over-engineering.
 - All responses should be in a **JSON** format.
@@ -66,7 +67,7 @@ git checkout -b challenge/lastname-firstname
 ```
 
 You will notice that we provided you with the project skeleton with almost everything included (`routes`, `models`
-, `migration`, `controllers`, `requests`, `resources`, `tests`)
+, `migration`, `factories`, `controllers`, `requests`, `resources`, `tests`)
 all you need to do is to fill in the missing logic's and run the tests.
 
 All tests within this project should pass before you push your code.
